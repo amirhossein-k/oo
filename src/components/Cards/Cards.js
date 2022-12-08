@@ -1,31 +1,33 @@
 import React from 'react'
+import {Card} from 'react-bootstrap'
 import '../../styles/Cards.css'
 import {Cars} from '../../untils/Cars'
-import cash_logo from 'images/cash.svg'
-import car_logo from 'images/carlogo.svg'
+import cash_logo from '../../public/cash.svg'
+import car_logo from '../../public/carlogo.svg'
 // import ShowMore from './ShowMore'
 
 const Cards = () => {
   return (
 <>
-    <div className='container_product'>
+    
       
       {
         Cars.map(item=>{
           return(
-            <div className='pruduct' key={item.id}>
-              <img src={`${item.image}`} />
-              <p className='name'>{item.name}</p>
-              <div className='box'>
-                  <span className='price'> <img src={cash_logo}/> {item.price} toman </span>
-                  <span className='catagory'><img src={car_logo}/> {item.catagory}</span>
-              </div>
-            </div>
+            <Card className='pruduct' key={item.id}>
+              <Card.Img variant="top" src={`${item.image}`} />
+               <Card.Title className='name'>{item.name}</Card.Title>
+          
+              <Card.Body className='box'>
+                  <Card.Text > <Card.Img  src={cash_logo} className="imgg"/> {item.price} toman </Card.Text>
+                  <Card.Text ><Card.Img  src={car_logo} className="imgg"/> {item.catagory}</Card.Text>
+              </Card.Body>
+            </Card>
           )
         })
       }
 
-    </div>
+   
     {/* <div className='more'>
       <ShowMore>Show All Cars</ShowMore>
     </div> */}

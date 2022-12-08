@@ -1,0 +1,7 @@
+@media screen and (max-width:1300px){
+  .fix{
+        justify-content: space-evenly;
+    /* align-items: stretch; */
+   
+  }
+}

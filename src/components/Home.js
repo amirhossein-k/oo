@@ -3,6 +3,7 @@ import { Container, Col, Row, Card } from "react-bootstrap";
 import Swipper from "./Swipper/Swipper";
 import Search from "./Search/Search";
 import Cards from "./Cards/Cards";
+import "../styles/Home.css";
 const Home = () => {
   return (
     <Container fluid>
@@ -12,7 +13,7 @@ const Home = () => {
       <Row className="justify-content-center align-items-center g-2 p-2">
         <Search />
       </Row>
-      <Row>
+      <Row className="gap-4 fix">
         <Cards />
       </Row>
     </Container>
