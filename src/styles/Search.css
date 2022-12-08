@@ -1,0 +1,19 @@
+.container {
+  box-shadow: 1px 1px 5px 1px rgba(134, 129, 129, 0.5);
+}
+
+.button {
+  padding: 15px;
+  display: "block";
+  width: 228px;
+  position: relative;
+  /* right: -50px; */
+  background-color: black;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.button:hover {
+  color: black;
+  background-color: #fff;
+}
