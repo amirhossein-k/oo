@@ -1,5 +1,5 @@
 :root {
-  --bs-gutter-x: 0 !important;
+  /* --bs-gutter-x: 0 !important; */
 }
 html {
   font-size: 100%;
@@ -18,9 +18,9 @@ body {
 
 
 **********************************************************************/
-.container-fluid {
+/* .container-fluid {
   --bs-gutter-x: 0 !important;
-}
+} */
 .navbar {
   padding-left: 20px;
   padding-right: 20px;

@@ -8,7 +8,7 @@ const Home = () => {
       <Row>
         <Swipper />
       </Row>
-      <Row>
+      <Row className="justify-content-center align-items-center g-2 p-2">
         <Search />
       </Row>
     </Container>

@@ -5,29 +5,26 @@ import "../../styles/Search.css";
 
 const Search = () => {
   return (
-    // <Container>
     <>
-      <Col lg={2}>
+      <Col xl={2} md={4} sm={6} className="justify">
         <InputModule>keyword</InputModule>
       </Col>
-      <Col lg={2}>
+      <Col xl={2} md={4} sm={6} className="justify">
         <InputModule>All Categories</InputModule>
       </Col>
-      <Col lg={2}>
+      <Col xl={2} md={4} sm={6} className="justify">
         <InputModule>Brand</InputModule>
       </Col>
-      <Col lg={2}>
-        {" "}
+      <Col xl={2} md={4} sm={6} className="justify">
         <InputModule>Fuel Type</InputModule>
       </Col>
-      <Col lg={2}>
-        {" "}
+      <Col xl={2} md={4} sm={6} className="justify">
         <InputModule>Status</InputModule>
       </Col>
-
-      <button className="button">Search</button>
+      <Col xl={2} md={4} sm={6} className="justify">
+        <button className="button fixed">Search</button>
+      </Col>
     </>
-    // {/* </Container> */}
   );
 };
 
