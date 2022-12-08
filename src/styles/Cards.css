@@ -1,0 +1,47 @@
+.pruduct {
+  width: 350px;
+  height: 370px;
+  margin: 0 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 5px 1px rgba(134, 129, 129, 0.5);
+}
+.name {
+  grid-row: span 1;
+  font-size: 19px;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  line-height: 100%;
+  padding-top: 8px;
+  text-transform: uppercase;
+}
+catagory {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+catagory img {
+  width: 22px;
+  margin-right: 5px;
+}
+.price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.price img {
+  width: 18px;
+  margin-right: 5px;
+}
+img {
+  width: 325px;
+  height: 100%;
+}
+.more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  text-align: center;
+  line-height: 100%;
+}
