@@ -28,6 +28,25 @@
   width: 80%;
   object-fit: initial;
 }
+
+.contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+}
+.contain .time {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+.block {
+  display: block;
+}
 @media screen and (max-width: 1108px) {
   .fix {
     justify-content: center;
