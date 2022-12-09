@@ -29,26 +29,26 @@ const Home = () => {
           <div className="contain">
             <div className="time">
               <span className="block">
-                شنبه تا چهارشنبه<span>10-10</span>
+                شنبه تا چهارشنبه<span className="m-2">10-10</span>
               </span>
               <span className="block">
-                جمعه<span>12-5</span>
+                پنج شنبه<span className="m-2">12-5</span>
               </span>
               <span className="block">
-                جمعه<span>10-8</span>
+                جمعه<span className="m-2">10-8</span>
               </span>
             </div>
             <div className="social">
               <div className="box">
-                <img src="../public/phone.png" />
+                <img src="https://res.cloudinary.com/dijamrzud/image/upload/v1670610052/phone_mw6xk7.png" />
                 <span>09391470427</span>
               </div>
               <div className="box">
-                <img src="" />
+                <img src="https://res.cloudinary.com/dijamrzud/image/upload/v1670610051/insta_aewyg5.png" />
                 <span>09391470427</span>
               </div>
               <div className="box">
-                <img src="" />
+                <img src="https://res.cloudinary.com/dijamrzud/image/upload/v1670610010/loc_emmrsc.png" />
                 <span>09391470427</span>
               </div>
             </div>
