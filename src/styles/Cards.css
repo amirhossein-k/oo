@@ -49,6 +49,16 @@ catagory img {
   width: 20px !important;
   height: auto;
 }
+.button {
+  color: white;
+  background-color: black;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 0.5px rgba(0, 0, 0, 0.2);
+  border: 0.8px solid black;
+  transition: background-color 0.5s ease;
+}
 
 @media screen and (max-width: 685px) {
   .pruduct {

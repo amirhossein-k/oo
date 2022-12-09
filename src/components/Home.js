@@ -15,7 +15,6 @@ const Home = () => {
       </Row>
       <Row className="gap-4 fix">
         <Cards />
-        
       </Row>
     </Container>
   );

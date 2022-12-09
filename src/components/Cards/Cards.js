@@ -31,10 +31,7 @@ const Cards = () => {
           </Card>
         );
       })}
-
-      {/* <div className='more'>
-      <ShowMore>Show All Cars</ShowMore>
-    </div> */}
+      <button className="button">Show More</button>
     </>
   );
 };
