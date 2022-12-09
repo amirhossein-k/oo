@@ -1,7 +1,6 @@
-@media screen and (max-width:1300px){
-  .fix{
-        justify-content: space-evenly;
+@media screen and (max-width: 1108px) {
+  .fix {
+    justify-content: center;
     /* align-items: stretch; */
-   
   }
 }

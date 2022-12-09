@@ -10,7 +10,7 @@ const Home = () => {
       <Row>
         <Swipper />
       </Row>
-      <Row className="justify-content-center align-items-center g-2 p-2">
+      <Row className="justify-content-center align-items-center g-2 p-3 shadow mt-2 mb-2">
         <Search />
       </Row>
       <Row className="gap-4 fix">

@@ -6,7 +6,7 @@ import Header from "./components/Header/Header";
 export default function App() {
   return (
     <BrowserRouter>
-      <Container fluid>
+      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
