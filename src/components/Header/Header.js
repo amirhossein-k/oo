@@ -39,11 +39,16 @@ const Header = () => {
             src="https://res.cloudinary.com/dijamrzud/image/upload/v1668860640/bxrni1yl3nxxhmvdawrn.jpg"
             alt=""
           />
-          <span className="title">Amir Gallery</span>
-          <span className="tagline">
-            A mystery person
-            <a href="">anthony.russel42@example.com</a>
-          </span>
+          <div className="back-fade">
+            {" "}
+            <span className="title">Amir Gallery</span>
+          </div>
+          <div className="back-fade my-2" style={{ background: "#adb5bd57" }}>
+            <span className="tagline">
+              A mystery person
+              <a href="">anthony.russel42@example.com</a>
+            </span>
+          </div>
         </h1>
       </div>
 

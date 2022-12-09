@@ -241,15 +241,21 @@ a:hover {
   margin-bottom: 50px;
   border-radius: 50%;
 }
-#head .title {
+.back-fade {
+  background: #adb5bda3;
+  border-radius: 5px;
+  padding: 5px;
+}
+#head .back-fade .title {
   font-family: Alice, Georgia, serif;
   font-size: 49px;
   font-size: 3.0625rem;
   margin-bottom: 20px;
+  color: #121111 !important;
 }
-#head .title a {
+#head .back-fade .title a {
   text-decoration: none !important;
-  color: #333333;
+  color: #121111 !important;
 }
 #head .tagline {
   display: block;
@@ -263,17 +269,17 @@ a:hover {
   font-weight: normal;
 }
 #head .tagline a {
-  color: #5e5e5e;
+  color: #c7c7c7;
   text-decoration: none !important;
   padding-left: 10px;
 }
 #head .tagline a:hover {
-  color: #e2e1e1;
+  color: #000000;
 }
 .home #head {
   padding: 90px 0;
 }
-.home #head .title {
+.home #head .back-fade .title {
   font-size: 49px;
   font-size: 3.0625rem;
 }

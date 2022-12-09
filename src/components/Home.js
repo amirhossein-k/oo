@@ -39,15 +39,15 @@ const Home = () => {
               </span>
             </div>
             <div className="social">
-              <div className="box">
+              <div className="boxx">
                 <img src="https://res.cloudinary.com/dijamrzud/image/upload/v1670610052/phone_mw6xk7.png" />
                 <span className="px-3">09391470427</span>
               </div>
-              <div className="box">
+              <div className="boxx">
                 <img src="https://res.cloudinary.com/dijamrzud/image/upload/v1670610051/insta_aewyg5.png" />
                 <span className="px-3">AMIRHOSSEIN-K-1999</span>
               </div>
-              <div className="box">
+              <div className="boxx">
                 <img src="https://res.cloudinary.com/dijamrzud/image/upload/v1670610010/loc_emmrsc.png" />
                 <span className="px-3">تهران</span>
               </div>
