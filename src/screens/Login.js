@@ -23,7 +23,10 @@ const Login = () => {
               type="password"
               className="input input-my"
             />
-            <button className="button" style={{ padding: "10px 23px" }}>
+            <button
+              className="button"
+              style={{ padding: "10px 23px", marginTop: 10 }}
+            >
               ورود
             </button>
           </div>
