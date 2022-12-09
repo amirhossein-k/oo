@@ -16,6 +16,12 @@ const Home = () => {
       <Row className="gap-4 fix">
         <Cards />
       </Row>
+      <Row>
+        <Col md={6} lg={12} className="background">
+          <div className="ani-back"></div>
+        </Col>
+        <Col md={6} lg={12} className="background"></Col>
+      </Row>
     </Container>
   );
 };

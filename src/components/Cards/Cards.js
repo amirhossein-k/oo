@@ -31,7 +31,9 @@ const Cards = () => {
           </Card>
         );
       })}
-      <button className="button">Show More</button>
+      <div className="con-btn">
+        <button className="buttonn">Show More</button>
+      </div>
     </>
   );
 };

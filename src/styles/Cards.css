@@ -49,7 +49,9 @@ catagory img {
   width: 20px !important;
   height: auto;
 }
-.button {
+.buttonn {
+  height: 50px;
+  width: 20%;
   color: white;
   background-color: black;
   border: none;
@@ -58,6 +60,16 @@ catagory img {
   box-shadow: 0 1px 0 0.5px rgba(0, 0, 0, 0.2);
   border: 0.8px solid black;
   transition: background-color 0.5s ease;
+}
+.buttonn:hover {
+  color: black;
+  background-color: white;
+}
+.con-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
 }
 
 @media screen and (max-width: 685px) {
