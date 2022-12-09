@@ -17,10 +17,15 @@ const Home = () => {
         <Cards />
       </Row>
       <Row>
-        <Col md={6} lg={12} className="background">
-          <div className="ani-back"></div>
+        <Col lg={6} className="background">
+          <div className="ani-back">
+            <img src="https://res.cloudinary.com/dijamrzud/image/upload/v1668962705/circle_h6orwc.gif" />
+            <div className="car-img">
+              <img src="https://res.cloudinary.com/dijamrzud/image/upload/v1668962697/car_z05a6c.png" />
+            </div>
+          </div>
         </Col>
-        <Col md={6} lg={12} className="background"></Col>
+        <Col lg={6} className="background"></Col>
       </Row>
     </Container>
   );
