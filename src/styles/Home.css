@@ -4,3 +4,9 @@
     /* align-items: stretch; */
   }
 }
+@media screen and (min-width: 1449px) {
+  .fix {
+    padding: 0 20px;
+    /* align-items: stretch; */
+  }
+}
