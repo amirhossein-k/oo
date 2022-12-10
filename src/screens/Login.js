@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Row, Card } from "react-bootstrap";
+import { useNavigate, Link } from "react-router-dom";
 import "../styles/Login.css";
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  let navigate = useNavigate();
   return (
     <Row style={{ marginRight: 0, paddingRight: 0 }}>
       <Col xs={12} sm={6} style={{ padding: 0 }}>
