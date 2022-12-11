@@ -1,14 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Row, Card } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 import "../styles/Login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState(false);
 
+  /////////
   let navigate = useNavigate();
+  const dispath = useDispatch();
+  /////////
+  const userLogin = useSelector((state) => state.userLogin);
+  const { error, loading, userInfo } = userLogin;
+  //////////
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/");
+    }
+  }, [navigate, userInfo]);
+  /////
+  const submithandler =async(e)=>{
+    
+  }
   return (
     <Row style={{ marginRight: 0, paddingRight: 0 }}>
       <Col xs={12} sm={6} style={{ padding: 0 }}>
