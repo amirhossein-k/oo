@@ -23,9 +23,11 @@ const Login = () => {
     }
   }, [navigate, userInfo]);
   /////
-  const submithandler =async(e)=>{
-    
-  }
+  const submithandler = async (e) => {
+    e.preventDefault();
+
+    dispath();
+  };
   return (
     <Row style={{ marginRight: 0, paddingRight: 0 }}>
       <Col xs={12} sm={6} style={{ padding: 0 }}>
