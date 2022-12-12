@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Col, Row, Card } from "react-bootstrap";
+import { Col, Row, Card, Form } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import "../styles/Login.css";
+import { login } from "../actions/userActions";
+//////////////////////////////////////
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +28,7 @@ const Login = () => {
   const submithandler = async (e) => {
     e.preventDefault();
 
-    dispath();
+    dispath(login(email, password));
   };
   return (
     <Row style={{ marginRight: 0, paddingRight: 0 }}>
@@ -39,22 +41,34 @@ const Login = () => {
         {" "}
         <div className="info-login">
           <div className="border-my">
-            <input
-              placeholder="User Name"
-              type="text"
-              className="input input-my"
-            />
-            <input
-              placeholder="Password"
-              type="password"
-              className="input input-my"
-            />
-            <button
-              className="button"
-              style={{ padding: "10px 23px", marginTop: 10 }}
-            >
-              ورود
-            </button>
+            <Form onSubmit={submithandler} className="form-fix">
+              <Form.Group controlId="fromBasicEmail">
+                <Form.Control
+                  type="email"
+                  placeholder="User Name"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className=" input-my"
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group controlId="fromBasicPassword">
+                <Form.Control
+                  type="password"
+                  placeholder="Enter Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className=" input-my"
+                ></Form.Control>
+              </Form.Group>
+
+              <button
+                className="button"
+                style={{ padding: "10px 23px", marginTop: 10 }}
+                type="submit"
+              >
+                ورود
+              </button>
+            </Form>
           </div>
         </div>
       </Col>

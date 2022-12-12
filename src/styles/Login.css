@@ -1,3 +1,9 @@
+.form-fix {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .carlogin-img {
 }
 .carlogin-img img {
@@ -15,7 +21,7 @@
 }
 .input-my {
   padding: 5px;
-  margin: 10px;
+  margin: 10px 0;
   border-radius: 5px;
 }
 .border-my {
