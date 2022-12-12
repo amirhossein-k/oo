@@ -8,7 +8,7 @@ import "../styles/Home.css";
 const Home = () => {
   return (
     <>
-      <Home />
+      <Header />
       <Container fluid>
         <Row>
           <Swipper />
