@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import App from "./App";
 import store from "./store";
-import MainDashboard from "./components/Dashboard/MainDashboard";
+// import MainDashboard from "./components/Dashboard/MainDashboard";
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 

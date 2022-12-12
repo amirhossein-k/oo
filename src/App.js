@@ -12,12 +12,10 @@ export default function App() {
         {/* <Header /> */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="dashboard" element={<MainDashboard />} />
+          <Route path="login" element={<Login />} />
         </Routes>
       </Container>
-      <Routes>
-        <Route path="/dahsboard" element={<MainDashboard />} />
-      </Routes>
     </BrowserRouter>
   );
 }
