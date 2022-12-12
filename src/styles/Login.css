@@ -5,9 +5,12 @@
   align-items: center;
 }
 .carlogin-img {
+  width: 100%;
+  min-height: 100%;
 }
 .carlogin-img img {
   width: 100%;
+  min-height: 100vh;
 }
 .info-login {
   display: flex;
