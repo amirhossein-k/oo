@@ -9,11 +9,11 @@ export default function App() {
   return (
     <BrowserRouter>
       <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
-        {/* <Header /> */}
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="dashboard" element={<MainDashboard />} />
-          <Route path="login" element={<Login />} />
+          {/* <Route path="dashboard" element={<MainDashboard />} /> */}
+          <Route path="/api/login" element={<Login />} />
         </Routes>
       </Container>
     </BrowserRouter>

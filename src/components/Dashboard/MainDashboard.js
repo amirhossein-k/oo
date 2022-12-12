@@ -1,7 +1,7 @@
 import "../../styles/dashboard/dashboard.css";
 
 const MainDashboard = () => {
-  return <>dahsboard</>;
+  return <>dahsboardس</>;
 };
 
 export default MainDashboard;

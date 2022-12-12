@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, Row, Card, Form } from "react-bootstrap";
+import { Col, Row, Card, Form, Container } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../components/Header/Header";
@@ -32,8 +32,7 @@ const Login = () => {
     dispath(login(email, password));
   };
   return (
-    <>
-      <Header />
+    <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
       <Row style={{ marginRight: 0, paddingRight: 0 }}>
         <Col xs={12} sm={6} style={{ padding: 0 }}>
           <div className="carlogin-img">
@@ -76,7 +75,7 @@ const Login = () => {
           </div>
         </Col>
       </Row>
-    </>
+    </Container>
   );
 };
 export default Login;
