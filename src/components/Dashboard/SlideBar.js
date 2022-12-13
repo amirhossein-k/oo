@@ -8,6 +8,7 @@ import {
   FaThList,
   FaUserAlt,
 } from "react-icons/fa";
+import { CgLogOff } from "react-icons/cg";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { logout } from "../../actions/userActions";
@@ -43,6 +44,7 @@ const SlideBar = ({ children }) => {
   ///////////
   const logouthandler = () => {
     dispatch(logout());
+    navigate("/");
   };
   return (
     <div className="containerr">
@@ -66,8 +68,16 @@ const SlideBar = ({ children }) => {
             </div>
           </NavLink>
         ))}
-        <Nav.Link href="#" onClick={logouthandler}>
-          logout
+        <Nav.Link
+          href="#"
+          onClick={logouthandler}
+          className="link"
+          style={{ justifyContent: "center" }}
+        >
+          <div className="icon" style={{ padding: " 10px 15px" }}>
+            {" "}
+            <CgLogOff />
+          </div>
         </Nav.Link>
       </div>
       <main>{children}</main>

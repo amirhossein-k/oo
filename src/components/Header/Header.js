@@ -64,6 +64,9 @@ const Header = () => {
             <Nav>
               <Nav.Link href="#deets">لیست ماشین ها</Nav.Link>
             </Nav>
+            <Nav>
+              <Nav.Link href="/login">ورود</Nav.Link>
+            </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
