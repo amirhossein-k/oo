@@ -12,8 +12,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../actions/userActions";
 import SlideBar from "../Dashboard/SlideBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import About from "./About";
-
+import Analytics from "./Analytics";
+import Comment from "./Comment";
+import Product from "./Product";
+import { Col, Row } from "react-bootstrap";
 
 //////////
 const MainDashboard = ({ userInfo }) => {
@@ -22,7 +24,7 @@ const MainDashboard = ({ userInfo }) => {
     return <Navigate to="/" replace />;
   }
   ///////////
- 
+
   ///////////
 
   // useEffect(() => {}, []);
@@ -30,11 +32,31 @@ const MainDashboard = ({ userInfo }) => {
     dispatch(logout());
   };
   return (
-    <SlideBar>
-      <Routes>
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </SlideBar>
+    <Container style={{ minWidth: "100%" }}>
+      <Row>
+        <Col xs={2} sm={3} style={{ paddingLeft: 0 }}>
+          <SlideBar />
+        </Col>
+        <Col xs={10} sm={9}>
+          <Row>
+            <Row>
+              <Analytics />
+            </Row>
+            <Row>
+              <Comment />
+            </Row>
+            <Row>
+              <Col>
+                <Product />
+              </Col>
+              <Col>
+                <Product />
+              </Col>
+            </Row>
+          </Row>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

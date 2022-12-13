@@ -5,11 +5,11 @@ import Search from "./Search/Search";
 import Cards from "./Cards/Cards";
 import Header from "./Header/Header";
 import "../styles/Home.css";
-const Home = () => {
+const Home = ({ userInfo }) => {
   return (
     // <>
     <Container fluid>
-      <Header />
+      <Header userInfo={userInfo} />
       <Row>
         <Swipper />
       </Row>

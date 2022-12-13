@@ -22,7 +22,7 @@ export default function App() {
     <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
       {/* <Header /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home userInfo={userInfo} />} />
         <Route element={<ProtectedRoute userInfo={userInfo} />}>
           <Route
             path="dashboard"

@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Card, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-
-const Header = () => {
+import { logout } from "../../actions/userActions";
+import { useDispatch, useSelector } from "react-redux";
+const Header = ({ userInfo }) => {
   const [metr, setMetr] = useState("");
   window.onscroll = function () {
     myFunction();
@@ -14,6 +15,14 @@ const Header = () => {
       navlist.classList.remove("sticky");
     }
   }
+  //////////
+  const dispatch = useDispatch();
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
+  /////
+  useEffect(() => {}, [userInfo]);
+
   return (
     <header
       id="header"
@@ -61,12 +70,40 @@ const Header = () => {
               <Nav.Link href="#features">صفحه اصلی</Nav.Link>
               <Nav.Link href="#pricing">درباره ما</Nav.Link>
             </Nav>
+            {userInfo ? (
+              <NavDropdown
+                title={`${userInfo.name}`}
+                id="collasible-nav-dropdown"
+              >
+                <NavDropdown.Item href="/profile">
+                  {/* <img
+                      alt=""
+                      src={`${userInfo.pic}`}
+                      width="25"
+                      height="25"
+                      style={{ marginRight: 10 }}
+                    /> */}
+                  My Profile
+                </NavDropdown.Item>
+
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="/dashboard">
+                  داشبورد مدیریت
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={logoutHandler}>
+                  خروج
+                </NavDropdown.Item>
+              </NavDropdown>
+            ) : (
+              <Nav.Link href="/login">ورود</Nav.Link>
+            )}
             <Nav>
               <Nav.Link href="#deets">لیست ماشین ها</Nav.Link>
             </Nav>
-            <Nav>
+
+            {/* <Nav>
               <Nav.Link href="/login">ورود</Nav.Link>
-            </Nav>
+            </Nav> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>

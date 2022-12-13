@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import {
@@ -7,6 +7,7 @@ import {
   FaTh,
   FaThList,
   FaUserAlt,
+  FaHome,
 } from "react-icons/fa";
 import { CgLogOff } from "react-icons/cg";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,7 +19,7 @@ const SlideBar = ({ children }) => {
   const toggle = () => setIsOpen(!isOpen);
   const menuItem = [
     {
-      path: "/",
+      path: "/dashboard",
       name: "dashboard",
       icon: <FaTh />,
     },
@@ -37,6 +38,11 @@ const SlideBar = ({ children }) => {
       name: "Product List",
       icon: <FaThList />,
     },
+    {
+      path: "/",
+      name: "Site",
+      icon: <FaHome />,
+    },
   ];
   ////////
   let navigate = useNavigate();
@@ -46,6 +52,33 @@ const SlideBar = ({ children }) => {
     dispatch(logout());
     navigate("/");
   };
+  /////////
+  const [heightOutput, setHeightOutput] = useState(null);
+  const [widthOutput, setWidthOutput] = useState(null);
+  window.onresize = function () {
+    myFunction();
+  };
+  function myFunction() {
+    if (window.innerWidth < 743) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
+  }
+  // function resizeListener() {
+  //   setHeightOutput(window.innerHeight);
+  //   setWidthOutput(window.innerWidth);
+  // }
+
+  // window.addEventListener("resize", resizeListener);
+  // useEffect(() => {
+  //   if (widthOutput < 743) {
+  //     toggle();
+  //   }
+  // }, [isOpen]);
+
+  // console.log(widthOutput, "with");
+  //////////////////
   return (
     <div className="containerr">
       <div className="sidebar" style={{ width: isOpen ? "200px" : "50px" }}>
