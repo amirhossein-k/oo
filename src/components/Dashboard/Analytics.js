@@ -1,5 +1,5 @@
-import { Col } from "react-bootstrap";
-
+import { Card, Col, Row } from "react-bootstrap";
+import ProgressBar from "@ramonak/react-progress-bar";
 const Analytics = () => {
   const ListAnalyz = [
     {
@@ -36,7 +36,28 @@ const Analytics = () => {
   return (
     <>
       {ListAnalyz.map((item, index) => (
-        <Col key={index}>{item.title}</Col>
+        <Col key={index} sm={`${12 / index}`}>
+          <Card.Body>
+            <Row>
+              <Col className="mr-2">
+                <div className="text-xs font-weight-bold text-info text-uppercase mb-1">
+                  <div className="row no-gutters align-items-center">
+                    <div className="col-auto">
+                      <div className="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                        50
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Col>
+              <Col className="auto">
+                <div className="progress progress-sm mr-2">
+                  <ProgressBar completed={180} maxCompleted={200} />
+                </div>
+              </Col>
+            </Row>
+          </Card.Body>
+        </Col>
       ))}
     </>
   );
