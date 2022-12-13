@@ -7,6 +7,7 @@ import Header from "./components/Header/Header";
 import Login from "./screens/Login";
 import MainDashboard from "./components/Dashboard/MainDashboard";
 import { useSelector } from "react-redux";
+import SlideBar from "./components/Dashboard/SlideBar";
 ///////////////
 export default function App() {
   // const [user, setUser] = useState("");
@@ -20,7 +21,10 @@ export default function App() {
         {/* <Header /> */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="dashboard" element={<MainDashboard user={userInfo} />} />
+          <Route
+            path="dashboard"
+            element={<MainDashboard userInfo={userInfo} />}
+          />
           <Route path="login" element={<Login />} />
         </Routes>
       </Container>
