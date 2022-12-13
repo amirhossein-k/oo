@@ -19,9 +19,9 @@ export default function App() {
       <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
         {/* <Header /> */}
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="dashboard" element={<MainDashboard user={userInfo} />} />
-          <Route exact path="login" element={<Login />} />
+          <Route path="login" element={<Login />} />
         </Routes>
       </Container>
     </BrowserRouter>

@@ -16,8 +16,10 @@ const MainDashboard = ({ userInfo }) => {
   useEffect(() => {
     if (!userInfo) {
       return <Navigate to="/" replace />;
+    } else {
+      return <Navigate to="/dashboard" replace />;
     }
-  }, [userInfo, Navigate]);
+  }, []);
   const logouthandler = () => {
     dispatch(logout());
   };
