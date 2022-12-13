@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "../../styles/dashboard/dashboard.css";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -6,7 +7,20 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-const MainDashboard = () => {
+import { Link, Navigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../actions/userActions";
+const MainDashboard = ({ userInfo }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!userInfo) {
+      return <Navigate to="/" replace />;
+    }
+  }, [userInfo, Navigate]);
+  const logouthandler = () => {
+    dispatch(logout());
+  };
   return (
     <Navbar bg="light" expand="lg" className="mb-3">
       <Container fluid>
@@ -24,7 +38,9 @@ const MainDashboard = () => {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="#action1">Home</Nav.Link>
+              <Nav.Link href="/" onClick={logouthandler}>
+                logout
+              </Nav.Link>
               <Nav.Link href="#action2">Link</Nav.Link>
               <NavDropdown
                 title="Dropdown"
