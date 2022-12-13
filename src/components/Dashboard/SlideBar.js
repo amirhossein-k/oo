@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import {
   FaBars,
   FaShoppingBag,
@@ -7,6 +8,10 @@ import {
   FaThList,
   FaUserAlt,
 } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, Link } from "react-router-dom";
+import { logout } from "../../actions/userActions";
+
 const SlideBar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -32,7 +37,13 @@ const SlideBar = ({ children }) => {
       icon: <FaThList />,
     },
   ];
+  ////////
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
   ///////////
+  const logouthandler = () => {
+    dispatch(logout());
+  };
   return (
     <div className="containerr">
       <div className="sidebar" style={{ width: isOpen ? "200px" : "50px" }}>
@@ -45,7 +56,7 @@ const SlideBar = ({ children }) => {
           </div>
         </div>
         {menuItem.map((item, index) => (
-          <NavLink to={item.path} key={index} className="link">
+          <NavLink href={item.path} key={index} className="link">
             <div className="icon">{item.icon}</div>
             <div
               className="link_text"
@@ -55,6 +66,9 @@ const SlideBar = ({ children }) => {
             </div>
           </NavLink>
         ))}
+        <Nav.Link href="#" onClick={logouthandler}>
+          logout
+        </Nav.Link>
       </div>
       <main>{children}</main>
     </div>

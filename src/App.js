@@ -8,6 +8,8 @@ import Login from "./screens/Login";
 import MainDashboard from "./components/Dashboard/MainDashboard";
 import { useSelector } from "react-redux";
 import SlideBar from "./components/Dashboard/SlideBar";
+import About from "./components/Dashboard/About";
+import ProtectedRoute from "./components/porotect/ProtectedRoute";
 ///////////////
 export default function App() {
   // const [user, setUser] = useState("");
@@ -16,18 +18,21 @@ export default function App() {
 
   console.log(userInfo);
   return (
-    <BrowserRouter>
-      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
-        {/* <Header /> */}
-        <Routes>
-          <Route path="/" element={<Home />} />
+    // <BrowserRouter>
+    <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+      {/* <Header /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route element={<ProtectedRoute userInfo={userInfo} />}>
           <Route
             path="dashboard"
             element={<MainDashboard userInfo={userInfo} />}
           />
-          <Route path="login" element={<Login />} />
-        </Routes>
-      </Container>
-    </BrowserRouter>
+          <Route path="/about" element={<About />} />
+        </Route>
+        <Route path="login" element={<Login />} />
+      </Routes>
+    </Container>
+    //   </BrowserRouter>
   );
 }

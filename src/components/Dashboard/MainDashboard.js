@@ -13,23 +13,28 @@ import { logout } from "../../actions/userActions";
 import SlideBar from "../Dashboard/SlideBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./About";
+
+
+//////////
 const MainDashboard = ({ userInfo }) => {
   const dispatch = useDispatch();
   if (!userInfo) {
     return <Navigate to="/" replace />;
   }
+  ///////////
+ 
+  ///////////
+
   // useEffect(() => {}, []);
   const logouthandler = () => {
     dispatch(logout());
   };
   return (
-    <>
-      <SlideBar>
-        <Routes>
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </SlideBar>
-    </>
+    <SlideBar>
+      <Routes>
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </SlideBar>
   );
 };
 
