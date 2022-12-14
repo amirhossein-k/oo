@@ -54,8 +54,8 @@ main {
   border-left: 0.25rem solid red !important;
 }
 .border-left-pink {
-  border-left: 0.25rem solid rgb(255, 229, 229) !important;
+  border-left: 0.25rem solid #e83e8c !important;
 }
-.border-left-pink {
+.border-left-black {
   border-left: 0.25rem solid black !important;
 }

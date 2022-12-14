@@ -4,31 +4,31 @@ const Analytics = () => {
   const ListAnalyz = [
     {
       title: "مقدار پست",
-      icon: "",
+      icon: "fa-solid fa-file-lines",
       color: "red",
       count: 2,
     },
     {
       title: "سود",
-      icon: "",
+      icon: "fa-solid fa-scale-balanced",
       color: "blue",
       count: 2,
     },
     {
       title: "ماشین موجود",
-      icon: "",
+      icon: "fa-solid fa-truck-monster",
       color: "yellow",
       count: 5,
     },
     {
       title: "فروخته شده در ماه جاری",
-      icon: "",
+      icon: "fa-sharp fa-solid fa-cart-shopping",
       color: "pink",
       count: 10,
     },
     {
       title: "مقدار بدهی",
-      icon: "",
+      icon: "fa-sharp fa-solid fa-dollar-sign",
       color: "black",
       count: 50,
     },
@@ -62,14 +62,12 @@ const Analytics = () => {
                           </div>
                         </div>
                         <div className="col">
-                          {/* <div className="progress progress-sm mr-2"> */}
                           <ProgressBar completed={item.count} />
-                          {/* </div> */}
                         </div>
                       </div>
                     </div>
                     <div className="col-auto">
-                      <i className="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                      <i className={`fa-2x text-gray-300 ${item.icon} `}></i>
                     </div>
                   </div>
                 </div>
