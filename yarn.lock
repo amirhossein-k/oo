@@ -6664,6 +6664,11 @@
   dependencies:
     "boolbase" "^1.0.0"
 
+"num2persian@^3.2.2":
+  "integrity" "sha512-xwT+fAiVWq6Nde+JWf5/PlW3qAGRNa0TJEUJwoJmaXjmLp1dewOFiX2+jUSreAsTrX2qi/rzgk3diSt36f6ouQ=="
+  "resolved" "https://registry.npmjs.org/num2persian/-/num2persian-3.2.2.tgz"
+  "version" "3.2.2"
+
 "nwsapi@^2.2.0":
   "integrity" "sha512-90yv+6538zuvUMnN+zCr8LuV6bPFdq50304114vJYJ8RDyK8D5O9Phpbd6SZWgI7PwzmmfN1upeOJlvybDSgCw=="
   "resolved" "https://registry.npmjs.org/nwsapi/-/nwsapi-2.2.2.tgz"

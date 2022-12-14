@@ -27,7 +27,7 @@ const Analytics = () => {
       count: 10,
     },
     {
-      title: "مقدار بدهی",
+      title: "وام",
       icon: "fa-sharp fa-solid fa-dollar-sign",
       color: "black",
       count: 50,
@@ -40,7 +40,7 @@ const Analytics = () => {
           key={index}
           className=" mb-4"
           sm={10}
-          xl={4}
+          xl={3}
           md={6}
           style={{ paddingLeft: 0 }}
         >
@@ -58,11 +58,35 @@ const Analytics = () => {
                       <div className="row no-gutters align-items-center">
                         <div className="col-auto">
                           <div className="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                            {item.count}
+                            {(() => {
+                              switch (index) {
+                                case 0:
+                                  return item.count;
+                                case 1:
+                                  return item.count;
+                                case 2:
+                                  return item.count;
+                                case 3:
+                                  return item.count;
+                                case 4:
+                                  return `${item.count} میلیون`;
+
+                                default:
+                                  return null;
+                              }
+                            })()}
                           </div>
                         </div>
                         <div className="col">
-                          <ProgressBar completed={item.count} />
+                          {(() => {
+                            switch (index) {
+                              case 2:
+                                return <ProgressBar completed={item.count} />;
+
+                              default:
+                                return null;
+                            }
+                          })()}
                         </div>
                       </div>
                     </div>
