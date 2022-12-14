@@ -27,7 +27,7 @@
 }
 
 @media screen and (min-width: 996px) and (max-width: 1247px) {
-  .col {
+  .coll {
     flex: 0 0 6% !important;
   }
 }

@@ -55,14 +55,23 @@ const SlideBar = ({ children }) => {
   /////////
   const [heightOutput, setHeightOutput] = useState(null);
   const [widthOutput, setWidthOutput] = useState(null);
+  const [expantnav, setExpantnav] = useState(false);
   window.onresize = function () {
     myFunction();
+    myFunction2();
   };
   function myFunction() {
-    if (window.innerWidth < 743) {
+    if (window.innerWidth < 976) {
       setIsOpen(false);
     } else {
       setIsOpen(true);
+    }
+  }
+  function myFunction2() {
+    if (window.innerWidth > 1340) {
+      setExpantnav(true);
+    } else {
+      setExpantnav(false);
     }
   }
   // function resizeListener() {
@@ -81,12 +90,17 @@ const SlideBar = ({ children }) => {
   //////////////////
   return (
     <div className="containerr">
-      <div className="sidebar" style={{ width: isOpen ? "200px" : "50px" }}>
+      <div
+        className="sidebar"
+        style={{
+          width: isOpen ? "200px" : "50px",
+        }}
+      >
         <div className="top_section">
           <h1 className="logo" style={{ display: isOpen ? "block" : "none" }}>
             Logo
           </h1>
-          <div className="bars" style={{ marginLeft: isOpen ? "50px" : "0px" }}>
+          <div className="bars" style={{ marginLeft: isOpen ? "20px" : "8px" }}>
             <FaBars onClick={toggle} />
           </div>
         </div>

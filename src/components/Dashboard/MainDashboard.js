@@ -34,14 +34,18 @@ const MainDashboard = ({ userInfo }) => {
   return (
     <Container style={{ minWidth: "100%" }}>
       <Row>
-        <Col xs={2} sm={3} style={{ paddingLeft: 0 }}>
+        <Col xs={2} sm={2} style={{ paddingLeft: 0 }}>
           <SlideBar />
         </Col>
-        <Col xs={10} sm={9}>
+        <Col xs={10} sm={10} style={{ paddingLeft: 0 }}>
+          {/* <Row style={{ height: "100vh" }}> */}
           <Row>
-            <Row>
+            <Row
+              style={{ paddingLeft: 0, paddingRight: 0, height: "max-content" }}
+            >
               <Analytics />
             </Row>
+
             <Row>
               <Comment />
             </Row>

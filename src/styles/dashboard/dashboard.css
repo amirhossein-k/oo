@@ -15,7 +15,7 @@ main {
 .top_section {
   display: flex;
   align-items: center;
-  padding: 20px 15px;
+  padding: 20px 3px;
 }
 .logo {
   font-size: 30x;
@@ -23,7 +23,7 @@ main {
 .bars {
   display: flex;
   font-size: 25px;
-  margin-left: 50px;
+  margin-left:20px;
 }
 .link {
   display: flex;
