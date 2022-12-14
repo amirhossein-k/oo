@@ -1,5 +1,6 @@
 import { Card, Col, Row } from "react-bootstrap";
 import ProgressBar from "@ramonak/react-progress-bar";
+import Num2persian from "num2persian";
 const Analytics = () => {
   const ListAnalyz = [
     {
@@ -12,7 +13,7 @@ const Analytics = () => {
       title: "سود",
       icon: "fa-solid fa-scale-balanced",
       color: "blue",
-      count: 2,
+      count: 2000,
     },
     {
       title: "ماشین موجود",
@@ -30,7 +31,7 @@ const Analytics = () => {
       title: "وام",
       icon: "fa-sharp fa-solid fa-dollar-sign",
       color: "black",
-      count: 50,
+      count: 50009080000,
     },
   ];
   return (
@@ -61,15 +62,54 @@ const Analytics = () => {
                             {(() => {
                               switch (index) {
                                 case 0:
-                                  return item.count;
+                                  return (
+                                    <>
+                                      {item.count}{" "}
+                                      <div className="num">
+                                        {`${item.count}`.num2persian()}
+                                      </div>
+                                    </>
+                                  );
                                 case 1:
-                                  return item.count;
+                                  return (
+                                    <>
+                                      {item.count}{" "}
+                                      <div className="num">
+                                        {`${item.count}`.num2persian()}
+                                      </div>
+                                    </>
+                                  );
                                 case 2:
-                                  return item.count;
+                                  return (
+                                    <>
+                                      {item.count}{" "}
+                                      <div
+                                        className="num"
+                                        style={{ opacity: 0.01 }}
+                                      >
+                                        .
+                                      </div>
+                                    </>
+                                  );
+
                                 case 3:
-                                  return item.count;
+                                  return (
+                                    <>
+                                      {item.count}{" "}
+                                      <div className="num">
+                                        {`${item.count}`.num2persian()}
+                                      </div>
+                                    </>
+                                  );
                                 case 4:
-                                  return `${item.count} میلیون`;
+                                  return (
+                                    <>
+                                      {item.count}{" "}
+                                      <div className="num">
+                                        {`${item.count}`.num2persian()}
+                                      </div>
+                                    </>
+                                  );
 
                                 default:
                                   return null;

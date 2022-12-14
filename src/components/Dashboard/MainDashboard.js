@@ -13,7 +13,7 @@ import { logout } from "../../actions/userActions";
 import SlideBar from "../Dashboard/SlideBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Analytics from "./Analytics";
-import Comment from "./Comment";
+import LastPost from "./LastPost";
 import Product from "./Product";
 import { Col, Row } from "react-bootstrap";
 
@@ -40,23 +40,28 @@ const MainDashboard = ({ userInfo }) => {
         <Col xs={10} sm={10} style={{ paddingLeft: 0, paddingTop: 5 }}>
           {/* <Row style={{ height: "100vh" }}> */}
           <Row>
-            <Row
-              style={{ paddingLeft: 0, paddingRight: 0, height: "max-content" }}
-            >
+            <Row style={{ paddingLeft: 0, paddingRight: 0 }}>
               <Analytics />
             </Row>
 
-            <Row>
-              <Comment />
+            <Row
+              style={{
+                paddingLeft: 0,
+                paddingRight: 0,
+                height: "max-content",
+                minWidth: "100%",
+              }}
+            >
+              <LastPost />
             </Row>
-            <Row>
+            {/* <Row>
               <Col>
                 <Product />
               </Col>
               <Col>
                 <Product />
               </Col>
-            </Row>
+            </Row> */}
           </Row>
         </Col>
       </Row>

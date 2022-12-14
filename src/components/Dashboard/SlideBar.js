@@ -89,11 +89,12 @@ const SlideBar = ({ children }) => {
   // console.log(widthOutput, "with");
   //////////////////
   return (
-    <div className="containerr">
+    <div className="containerr" style={{ minHeight: "100vh" }}>
       <div
         className="sidebar"
         style={{
           width: isOpen ? "200px" : "50px",
+          minHeight: "100vh",
         }}
       >
         <div className="top_section">
@@ -127,7 +128,7 @@ const SlideBar = ({ children }) => {
           </div>
         </Nav.Link>
       </div>
-      <main>{children}</main>
+      {/* <main>{children}</main> */}
     </div>
   );
 };
