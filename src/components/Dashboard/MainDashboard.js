@@ -37,7 +37,7 @@ const MainDashboard = ({ userInfo }) => {
         <Col xs={2} sm={2} style={{ paddingLeft: 0 }}>
           <SlideBar />
         </Col>
-        <Col xs={10} sm={10} style={{ paddingLeft: 0 }}>
+        <Col xs={10} sm={10} style={{ paddingLeft: 0, paddingTop: 5 }}>
           {/* <Row style={{ height: "100vh" }}> */}
           <Row>
             <Row

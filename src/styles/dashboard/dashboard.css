@@ -23,7 +23,7 @@ main {
 .bars {
   display: flex;
   font-size: 25px;
-  margin-left:20px;
+  margin-left: 20px;
 }
 .link {
   display: flex;
@@ -43,4 +43,19 @@ main {
 }
 .icon .link_text {
   font-size: 20px;
+}
+.border-left-blue {
+  border-left: 0.25rem solid blue !important;
+}
+.border-left-yellow {
+  border-left: 0.25rem solid yellow !important;
+}
+.border-left-red {
+  border-left: 0.25rem solid red !important;
+}
+.border-left-pink {
+  border-left: 0.25rem solid rgb(255, 229, 229) !important;
+}
+.border-left-pink {
+  border-left: 0.25rem solid black !important;
 }
