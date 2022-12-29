@@ -5,10 +5,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Header from "./components/Header/Header";
 import Login from "./screens/Login";
-import MainDashboard from "./components/Dashboard/MainDashboard";
+// import MainDashboard from "./components/Dashboard/MainDashboard";
 import { useSelector } from "react-redux";
-import SlideBar from "./components/Dashboard/SlideBar";
-import About from "./components/Dashboard/About";
+// import SlideBar from "./components/Dashboard/SlideBar";
+// import About from "./components/Dashboard/About";
 import ProtectedRoute from "./components/porotect/ProtectedRoute";
 ///////////////
 export default function App() {
@@ -23,13 +23,13 @@ export default function App() {
       {/* <Header /> */}
       <Routes>
         <Route path="/" element={<Home userInfo={userInfo} />} />
-        <Route element={<ProtectedRoute userInfo={userInfo} />}>
+        {/* <Route element={<ProtectedRoute userInfo={userInfo} />}>
           <Route
             path="dashboard"
             element={<MainDashboard userInfo={userInfo} />}
           />
           <Route path="/about" element={<About />} />
-        </Route>
+        </Route> */}
         <Route path="login" element={<Login />} />
       </Routes>
     </Container>
