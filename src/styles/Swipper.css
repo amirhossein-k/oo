@@ -65,9 +65,9 @@
 }
 .swiperNavPrev {
   left: 0;
-  background-image: url("images/left.svg");
+  background-image: url("../public/left.svg");
 }
 .swiperNavNext {
   right: 0;
-  background-image: url("images/right.svg");
+  background-image: url("../public/right.svg");
 }

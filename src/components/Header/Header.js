@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Card, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-
-const Header = () => {
+import { logout } from "../../actions/userActions";
+import { useDispatch, useSelector } from "react-redux";
+const Header = ({ userInfo }) => {
   const [metr, setMetr] = useState("");
   window.onscroll = function () {
     myFunction();
@@ -14,6 +15,14 @@ const Header = () => {
       navlist.classList.remove("sticky");
     }
   }
+  //////////
+  const dispatch = useDispatch();
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
+  /////
+  useEffect(() => {}, [userInfo]);
+
   return (
     <header
       id="header"
@@ -39,42 +48,62 @@ const Header = () => {
             src="https://res.cloudinary.com/dijamrzud/image/upload/v1668860640/bxrni1yl3nxxhmvdawrn.jpg"
             alt=""
           />
-          <span className="title">Amir Gallery</span>
-          <span className="tagline">
-            A mystery person
-            <a href="">anthony.russel42@example.com</a>
-          </span>
+          <div className="back-fade">
+            {" "}
+            <span className="title">Amir Gallery</span>
+          </div>
+          <div className="back-fade my-2" style={{ background: "#adb5bd57" }}>
+            <span className="tagline">
+              A mystery person
+              <a href="">anthony.russel42@example.com</a>
+            </span>
+          </div>
         </h1>
       </div>
 
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" id="navbar">
         <Container fluid>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="#home">اتو امیر</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
-              <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
+              <Nav.Link href="#features">صفحه اصلی</Nav.Link>
+              <Nav.Link href="#pricing">درباره ما</Nav.Link>
+            </Nav>
+            {userInfo ? (
+              <NavDropdown
+                title={`${userInfo.name}`}
+                id="collasible-nav-dropdown"
+              >
+                <NavDropdown.Item href="/profile">
+                  {/* <img
+                      alt=""
+                      src={`${userInfo.pic}`}
+                      width="25"
+                      height="25"
+                      style={{ marginRight: 10 }}
+                    /> */}
+                  My Profile
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
+
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
+                <NavDropdown.Item href="/dashboard">
+                  داشبورد مدیریت
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={logoutHandler}>
+                  خروج
                 </NavDropdown.Item>
               </NavDropdown>
-            </Nav>
+            ) : (
+              <Nav.Link href="/login">ورود</Nav.Link>
+            )}
             <Nav>
-              <Nav.Link href="#deets">More deets</Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
-                Dank memes
-              </Nav.Link>
+              <Nav.Link href="#deets">لیست ماشین ها</Nav.Link>
             </Nav>
+
+            {/* <Nav>
+              <Nav.Link href="/login">ورود</Nav.Link>
+            </Nav> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>

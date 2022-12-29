@@ -1,5 +1,5 @@
 :root {
-  --bs-gutter-x: 0 !important;
+  /* --bs-gutter-x: 0 !important; */
 }
 html {
   font-size: 100%;
@@ -18,13 +18,14 @@ body {
 
 
 **********************************************************************/
-.container-fluid {
+/* .container-fluid {
   --bs-gutter-x: 0 !important;
-}
-.navbar {
+} */
+/* .navbar {
   padding-left: 20px;
   padding-right: 20px;
-}
+  z-index: 10000;
+} */
 /* .navbar.stick {
   position: sticky;
   top: 0;
@@ -32,11 +33,11 @@ body {
   opacity: 0.85;
 } */
 
-.sticky {
+/* .sticky {
   position: fixed;
   top: 0;
   width: 100%;
-}
+} */
 /* .navbar-collapse {
   -webkit-border-radius: 0;
   -webkit-background-clip: padding-box;
@@ -210,15 +211,12 @@ a:hover {
 
 
 **********************************************************************/
-#head {
+/* #head {
   background: #f4f4f4
     url(https://res.cloudinary.com/dijamrzud/image/upload/v1670333546/pexels-cesar-perez-733745_saw8qp.jpg);
-  /* height: 100%; */
 
-  /* Create the parallax scrolling effect */
 
   min-height: 100vh;
-  /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -233,56 +231,61 @@ a:hover {
   height: 140px;
   overflow: hidden;
   border: 9px solid rgba(133, 131, 131, 0.357);
-  /* border-radius: 5px; */
   -moz-outline-radius: 5px;
   margin-bottom: 50px;
   border-radius: 50%;
+} */
+/* .back-fade {
+  background: #adb5bda3;
+  border-radius: 5px;
+  padding: 5px;
 }
-#head .title {
+#head .back-fade .title {
   font-family: Alice, Georgia, serif;
   font-size: 49px;
   font-size: 3.0625rem;
   margin-bottom: 20px;
+  color: #121111 !important;
 }
-#head .title a {
+#head .back-fade .title a {
   text-decoration: none !important;
-  color: #333333;
-}
-#head .tagline {
+  color: #121111 !important;
+} */
+/* #head .tagline {
   display: block;
   font-size: 18px;
-  /* font-size: 0.875rem; */
+
   line-height: 1.8em;
   color: #ffffff;
   margin: 5px 0 0;
-}
-#head .tagline b {
+} */
+/* #head .tagline b {
   font-weight: normal;
 }
 #head .tagline a {
-  color: #5e5e5e;
+  color: #c7c7c7;
   text-decoration: none !important;
   padding-left: 10px;
-}
-#head .tagline a:hover {
-  color: #e2e1e1;
-}
-.home #head {
+} */
+/* #head .tagline a:hover {
+  color: #000000;
+} */
+/* .home #head {
   padding: 90px 0;
-}
-.home #head .title {
+} */
+/* .home #head .back-fade .title {
   font-size: 49px;
   font-size: 3.0625rem;
-}
-.home #head .tagline {
+} */
+/* .home #head .tagline {
   font-size: 16px;
   font-size: 1rem;
   margin: 15px 0 0;
-}
-.home {
+} */
+/* .home {
   min-height: 1000px;
   background-color: #ccc;
-}
+} */
 
 /*********************************************************************
 
