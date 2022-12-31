@@ -8,7 +8,7 @@ import "../styles/Home.css";
 const Home = ({ userInfo }) => {
   return (
     // <>
-    <Container fluid>
+    <Container fluid className="gx-0">
       <Header userInfo={userInfo} />
       <Row>
         <Swipper />
