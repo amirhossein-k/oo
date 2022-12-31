@@ -1,8 +1,8 @@
 import "./single.scss";
 import { Col, Row } from "react-bootstrap";
-import Sidebar from "../../components/sidebar/Sidebar";
-import Chart from "../../components/chart/Chart";
-import Tables from "../../components/tables/Tables";
+import Sidebar from "../../../components/Dashboard/sidebar/Sidebar";
+import Chart from "../../../components/Dashboard/chart/Chart";
+import Tables from "../../../components/Dashboard/tables/Tables";
 
 const Single = () => {
   return (

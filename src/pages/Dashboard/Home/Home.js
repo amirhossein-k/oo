@@ -1,12 +1,12 @@
 import "./home.scss";
-import Sidebar from "../../components/sidebar/Sidebar";
-import Navbar from "../../components/navbar/Navbar";
-import Widgets from "../../components/widgets/Widgets";
-import Featured from "../../components/featured/Featured";
-import Chart from "../../components/chart/Chart";
-import Tables from "../../components/tables/Tables";
+import Sidebar from "../../../components/Dashboard/sidebar/Sidebar";
+// import Navbar from "../../../components/DashboardDashboard/navbar/Navbar";
+import Widgets from "../../../components/Dashboard/widgets/Widgets";
+import Featured from "../../../components/Dashboard/featured/Featured";
+import Chart from "../../../components/Dashboard/chart/Chart";
+import Tables from "../../../components/Dashboard/tables/Tables";
 import { Container, Col, Row } from "react-bootstrap";
-const Home = () => {
+const HomeDashboard = () => {
   return (
     <Container
       fluid
@@ -16,7 +16,10 @@ const Home = () => {
         paddingRight: 0,
       }}
     >
-      <Row className="home g-0" style={{ marginLeft: 0, marginRight: 0 }}>
+      <Row
+        className="home g-0"
+        style={{ marginLeft: 0, marginRight: 0, backgroundColor: "initial" }}
+      >
         <Col
           className="g-0 flex-basis-0"
           style={{
@@ -53,21 +56,26 @@ const Home = () => {
               </Col>
             </div>
             {/* //charts className */}
-            <div className="  row "> 
+            <div className="  row ">
               <Col xs={12} sm={11} md={4} className="sm-fix">
                 <Featured />
               </Col>
-              <Col xs={12} sm={11} md={8} style={{maxWidth: '99%'}} className="sm-fix">
-                <Chart title={'Last 12 month'} aspect={2 / 1}/>
+              <Col
+                xs={12}
+                sm={11}
+                md={8}
+                style={{ maxWidth: "99%" }}
+                className="sm-fix"
+              >
+                <Chart title={"Last 12 month"} aspect={2 / 1} />
               </Col>
             </div>
             <div className="row listContainer">
               <Col xs={11}>
                 <div className="listTitle"> Last Transcations </div>
-                <Tables/>
+                <Tables />
               </Col>
             </div>
-              
           </div>
         </Col>
       </Row>
@@ -75,4 +83,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeDashboard;
