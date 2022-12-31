@@ -4,8 +4,8 @@ import { Col, Row, Button, Form, FormControl } from "react-bootstrap";
 import { TagsInput } from "react-tag-input-component";
 import { Link, useNavigate } from "react-router-dom";
 import {useDispatch,useSelector} from 'react-redux'
-import Sidebar from "../../components/sidebar/Sidebar";
-import {createProductAction} from '../../actions/productActions'
+import Sidebar from "../../../components/Dashboard/sidebar/Sidebar";
+// import {createProductAction} from '../../actions/productActions'
 const New = () => {
   const [namecar, setNameCar] = useState("");
   const [factory, setFactory] = useState("");
@@ -72,7 +72,7 @@ const New = () => {
   const submitHandler =(e)=>{
     e.preventDefault();
     if(!namecar || !factory || !distance || !skills ) return
-    dispatch(createProductAction(namecar,factory,distance,skills,pic))
+    // dispatch(createProductAction(namecar,factory,distance,skills,pic))
     resetHandler()
     navigate('/')
   }

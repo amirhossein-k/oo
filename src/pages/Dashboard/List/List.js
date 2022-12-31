@@ -1,21 +1,20 @@
-import './list.scss'
-import Sidebar from '../../components/sidebar/Sidebar'
-import Navbar from '../../components/navbar/Navbar'
-import Datatable from '../../components/datatable/Datatable'
-import {Col} from 'react-bootstrap'
+import "./list.scss";
+import Sidebar from "../../../components/Dashboard/sidebar/Sidebar";
+// import Navbar from '../../../components/Dashboard/navbar/Navbar'
+import Datatable from "../../../components/Dashboard/datatable/Datatable";
+import { Col } from "react-bootstrap";
 const List = () => {
   return (
     <div className="list row">
-      <Col sm={12} md={2} lg={2} className='fixlistnavbar'>
-        <Sidebar/>
+      <Col sm={12} md={2} lg={2} className="fixlistnavbar">
+        <Sidebar />
       </Col>
-      
+
       <Col sm={12} md={10} lg={10}>
         <div className="listContainer">
-          <Datatable/>
+          <Datatable />
         </div>
       </Col>
-        
     </div>
   );
 };
