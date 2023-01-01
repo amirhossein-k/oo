@@ -25,7 +25,7 @@ export const createProductAction =
 
       const config = {
         headers: {
-          "Content-Type": "application/json",
+          "Content-type": "application/json",
           Authorization: `Bearer ${userInfo.token}`,
         },
       };
@@ -36,7 +36,7 @@ export const createProductAction =
         config
       );
 
-      dispatch({ type: PRODUCT_UPDATE_SUCCESS, payload: data });
+      dispatch({ type: PROUCT_CREATE_SUCCESS, payload: data });
     } catch (error) {
       dispatch({
         type: PROUCT_CREATE_FAIL,
