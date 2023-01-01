@@ -15,7 +15,7 @@ import {
 import axios from "axios";
 
 export const createProductAction =
-  (pic, namecar, factory, distance, skills) => async (dispatch, getState) => {
+  (namecar, factory, distance, skills,pic) => async (dispatch, getState) => {
     try {
       dispatch({ type: PROUCT_CREATE_REQUEST });
 
@@ -30,9 +30,9 @@ export const createProductAction =
         },
       };
 
-      const { data } = axios.post(
-        "",
-        { pic, namecar, factory, distance, skills },
+      const { data } = await axios.post(
+        "https://3liice-9000.preview.csb.app/api/product/newproduct",
+        {  namecar, factory, distance, skills,pic },
         config
       );
 
