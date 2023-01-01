@@ -4,11 +4,11 @@ import { Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Header from "./components/Header/Header";
-// import Login from "./screens/Login";
+import Login from "./screens/Login";
 
 import { useSelector } from "react-redux";
 import HomeDashboard from "./pages/Dashboard/Home/Home";
-import Login from "./pages/Dashboard/Login/Login";
+// import Login from "./pages/Dashboard/Login/Login";
 import List from "./pages/Dashboard/List/List";
 import New from "./pages/Dashboard/New/New";
 import Single from "./pages/Dashboard/Single/Single";
@@ -30,6 +30,7 @@ export default function App() {
       {/* <Header /> */}
       <Routes>
         <Route path="/" element={<Home userInfo={userInfo} />} />
+        <Route path="/login" element={<Login/>}/>
         <Route element={<ProtectedRoute userInfo={userInfo} />}>
           <Route path="/dashboard">
             <Route index element={<HomeDashboard />} />
