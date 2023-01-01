@@ -14,6 +14,9 @@ import {
 } from "../constants/productConstant";
 import axios from "axios";
 
+export const listProductAction = ()=>async(dispatch,getState)=>{
+  try{}catch(error){}
+}
 export const createProductAction =
   (namecar, factory, distance, skills,pic) => async (dispatch, getState) => {
     try {
