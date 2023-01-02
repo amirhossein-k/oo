@@ -27,7 +27,7 @@ const actionColumn = [
 const columns = [
   {
     id: 1,
-    field: "carname",
+    field: "namecar",
     label: "خودرو",
     // cellRenderer: Username,
   },
@@ -35,6 +35,31 @@ const columns = [
     id: 2,
     field: "factory",
     label: "کارخانه",
+  },
+  {
+    id: 3,
+    field: "distance",
+    label: "کارکرد",
+  },
+  {
+    id: 4,
+    field: "pic",
+    label: "عکس",
+  },
+  {
+    id: 5,
+    field: "price",
+    label: "قیمت",
+  },
+  {
+    id: 6,
+    field: "status",
+    label: "وضعیت",
+  },
+  {
+    id: 7,
+    field: "skills",
+    label: "ویژگی",
   },
 ];
 const Datatable = () => {
