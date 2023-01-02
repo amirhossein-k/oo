@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { listProductAction } from "../../../actions/productActions";
 import axios from "axios";
 import GridTable from "@nadavshaar/react-grid-table";
+import getColumns from "./getColumns";
 // ......................................................
 const gridStyle = { minHeight: 400 };
 // ............................
@@ -65,19 +66,35 @@ const columns = [
 const Datatable = () => {
   const [datatable, setDataTable] = useState([]);
   const dispatch = useDispatch();
-
+  const [rowsData, setRowsData] = useState([]);
   const productList = useSelector((state) => state.productList);
-  const { product } = productList;
+  const { product, loading } = productList;
 
   useEffect(() => {
     dispatch(listProductAction());
+    setTimeout(() => {
+      setRowsData(product);
+    }, 1500);
   }, [dispatch]);
   // ...................
 
   return (
     <div className="datatable">
       <div style={{ height: "100%", width: "100%" }}>
-        <GridTable columns={columns} rows={product} />;
+        <GridTable
+          columns={getColumns({ setRowsData })}
+          rows={rowsData}
+          isLoading={loading}
+          // onRowClick={(
+          //   { rowIndex, product, column, isEdit, event },
+          //   tableManager
+          // ) =>
+          //   !isEdit &&
+          //   tableManager.rowSelectionApi.getIsRowSelectable(product._id) &&
+          //   tableManager.rowSelectionApi.toggleRowSelection(product._id)
+          // }
+        />
+        ;
       </div>
     </div>
   );
