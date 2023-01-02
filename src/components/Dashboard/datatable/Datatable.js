@@ -4,7 +4,7 @@ import React, { useEffect, useState, useCallback, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { listProductAction } from "../../../actions/productActions";
 import axios from "axios";
-
+import GridTable from "@nadavshaar/react-grid-table";
 // ......................................................
 const gridStyle = { minHeight: 400 };
 // ............................
@@ -25,19 +25,16 @@ const actionColumn = [
 ];
 //.......................................................
 const columns = [
-  { field: "id", headerName: "Id", width: 50 },
   {
+    id: 1,
     field: "carname",
-    headerName: "نام محصول",
-    width: 210,
-    renderCell: (params) => {
-      return (
-        <div className="cellWithImg">
-          <img className="cellImg" src={params.row.pic} alt="avatar" />
-          {params.row.carname}
-        </div>
-      );
-    },
+    label: "خودرو",
+    // cellRenderer: Username,
+  },
+  {
+    id: 2,
+    field: "factory",
+    label: "کارخانه",
   },
 ];
 const Datatable = () => {
@@ -55,13 +52,7 @@ const Datatable = () => {
   return (
     <div className="datatable">
       <div style={{ height: "100%", width: "100%" }}>
-        <DataGrid
-          rows={product}
-          columns={columns.concat(actionColumn)}
-          pdistanceSize={9}
-          rowsPerPdistanceOptions={[9]}
-          checkboxSelection
-        />
+        <GridTable columns={columns} rows={product} />;
       </div>
     </div>
   );
