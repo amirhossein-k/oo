@@ -24,7 +24,22 @@ const actionColumn = [
   },
 ];
 //.......................................................
-
+const columns = [
+  { field: "id", headerName: "Id", width: 50 },
+  {
+    field: "carname",
+    headerName: "نام محصول",
+    width: 210,
+    renderCell: (params) => {
+      return (
+        <div className="cellWithImg">
+          <img className="cellImg" src={params.row.pic} alt="avatar" />
+          {params.row.carname}
+        </div>
+      );
+    },
+  },
+];
 const Datatable = () => {
   const [datatable, setDataTable] = useState([]);
   const dispatch = useDispatch();
@@ -40,7 +55,13 @@ const Datatable = () => {
   return (
     <div className="datatable">
       <div style={{ height: "100%", width: "100%" }}>
-        {product && product.map((item) => <p>{item.factory}</p>)}
+        <DataGrid
+          rows={product}
+          columns={columns.concat(actionColumn)}
+          pdistanceSize={9}
+          rowsPerPdistanceOptions={[9]}
+          checkboxSelection
+        />
       </div>
     </div>
   );
