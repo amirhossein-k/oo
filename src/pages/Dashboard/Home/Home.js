@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./home.scss";
 import Sidebar from "../../../components/Dashboard/sidebar/Sidebar";
 // import Navbar from "../../../components/DashboardDashboard/navbar/Navbar";
@@ -6,7 +8,23 @@ import Featured from "../../../components/Dashboard/featured/Featured";
 import Chart from "../../../components/Dashboard/chart/Chart";
 import Tables from "../../../components/Dashboard/tables/Tables";
 import { Container, Col, Row } from "react-bootstrap";
+////////////
+
+import axios from "axios";
+import {listProductAction} from '../../../actions/productActions'
+////////////////
+
 const HomeDashboard = () => {
+    const dispatch = useDispatch();
+    const productList = useSelector((state) => state.productList);
+      const { product } = productList;
+      console.log(product)
+        useEffect(() => {
+    dispatch(listProductAction());
+    
+  }, [
+    dispatch,
+  ]);
   return (
     <Container
       fluid
