@@ -18,7 +18,7 @@ export const productCreateReducer = (state = {}, action) => {
     case PROUCT_CREATE_REQUEST:
       return { loading: true };
     case PROUCT_CREATE_SUCCESS:
-      return { loading: false,success:true };
+      return { loading: false, success: true };
     case PROUCT_CREATE_FAIL:
       return { loading: false, error: action.payload };
     default:
@@ -26,15 +26,15 @@ export const productCreateReducer = (state = {}, action) => {
   }
 };
 
-export const productList = (state={product:[],action})=>{
-  switch(action.type){
+export const productListReducer = (state = { product: [] }, action) => {
+  switch (action.type) {
     case PRODUCT_LIST_REQUEST:
-    return {loading:true}
+      return { loading: true };
     case PRODUCT_LIST_SUCCESS:
-    return {loading:false , product:action.payload}
+      return { loading: false, product: action.payload };
     case PRODUCT_LIST_FAIL:
-    return {loading:false,error:action.payload}
+      return { loading: false, error: action.payload };
     default:
-    return state
+      return state;
   }
-}
+};

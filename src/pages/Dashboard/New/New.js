@@ -6,6 +6,10 @@ import { Link, useNavigate } from "react-router-dom";
 import {useDispatch,useSelector} from 'react-redux'
 import Sidebar from "../../../components/Dashboard/sidebar/Sidebar";
 import {createProductAction} from '../../../actions/productActions'
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControls from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 const New = () => {
   const [namecar, setNameCar] = useState("");
   const [factory, setFactory] = useState("");
@@ -13,7 +17,8 @@ const New = () => {
   
   const [skills, setSkills] = useState([]);
   const [pic, setPic] = useState("");
- 
+  const [status, setStatus] = useState('');
+  const [price, setPrice] = useState('');
 
   ////////////////////////
   let navigate = useNavigate();
@@ -72,13 +77,14 @@ const New = () => {
   const submitHandler =(e)=>{
     e.preventDefault();
     if(!namecar || !factory || !distance || !skills ) return
-    dispatch(createProductAction(namecar,factory,distance,skills,pic))
+    dispatch(createProductAction(namecar,factory,distance,skills,pic,price,status))
     resetHandler()
     navigate('/dashboard')
+    console.log(status)
   }
 
   ///////////////
-  console.log(typeof(distance))
+
   return (
     <Row className="new">
       {/* ///////Sidebar//////// */}
@@ -154,6 +160,22 @@ const New = () => {
                 name="fruits"
                 placeHolder="ویژگی"
               />
+              {/* //////statsu///// */}
+              <FormControls sx={{ m: 1, minWidth: 120 }} size="small">
+      <InputLabel id="demo-select-small">وضعیت</InputLabel>
+      <Select
+        labelId="demo-select-small"
+        id="demo-select-small"
+        value={status}
+        label="وضعیت"
+        onChange={(e)=>setStatus(e.target.value)}
+      >
+        
+        <MenuItem value={'approved'}>موجود</MenuItem>
+        <MenuItem value={'sold'}>ناموجود</MenuItem>
+        
+      </Select>
+    </FormControls>
             </div>
             <div className="button-new">
               <Button type="submit" variant="primary" className="create-new">
