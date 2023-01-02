@@ -3,7 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { listProductAction } from "../../../actions/productActions";
-import axios from 'axios'
+import axios from "axios";
 
 // ......................................................
 const gridStyle = { minHeight: 400 };
@@ -30,20 +30,17 @@ const Datatable = () => {
   const dispatch = useDispatch();
 
   const productList = useSelector((state) => state.productList);
-  const {product } = productList
- 
- 
+  const { product } = productList;
+
   useEffect(() => {
     dispatch(listProductAction());
-  }, []);
+  }, [dispatch]);
   // ...................
 
   return (
     <div className="datatable">
       <div style={{ height: "100%", width: "100%" }}>
-        {product && product.map((item)=>(
-          <p>{item.factory}</p>
-        ))}
+        {product && product.map((item) => <p>{item.factory}</p>)}
       </div>
     </div>
   );

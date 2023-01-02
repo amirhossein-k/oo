@@ -11,20 +11,17 @@ import { Container, Col, Row } from "react-bootstrap";
 ////////////
 
 import axios from "axios";
-import {listProductAction} from '../../../actions/productActions'
+import { listProductAction } from "../../../actions/productActions";
 ////////////////
 
 const HomeDashboard = () => {
-    const dispatch = useDispatch();
-    const productList = useSelector((state) => state.productList);
-      const { product } = productList;
-      console.log(product)
-        useEffect(() => {
+  const dispatch = useDispatch();
+  const productList = useSelector((state) => state.productList);
+  const { product } = productList;
+  console.log(product);
+  useEffect(() => {
     dispatch(listProductAction());
-    
-  }, [
-    dispatch,
-  ]);
+  }, [dispatch]);
   return (
     <Container
       fluid
