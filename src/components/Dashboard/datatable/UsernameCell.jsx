@@ -31,21 +31,21 @@ const styles = {
   },
 };
 const UsernameCell = ({
-  tableManager,
-  value,
-  onChange,
-  isEdit,
+  // tableManager,
+  // value,
+  // onChange,
+  // isEdit,
   product,
-  column,
-  rowIndex,
-  searchText,
-  isFirstEditableCell,
+  // column,
+  // rowIndex,
+  // searchText,
+  // isFirstEditableCell,
 }) => {
   return (
     <div style={styles.root}>
       <React.Fragment>
         <img style={styles.img} src={product.pic} alt="avatar" />
-        <span style={styles.text}>{value}</span>
+        {/* <span style={styles.text}>{value}</span> */}
       </React.Fragment>
     </div>
   );

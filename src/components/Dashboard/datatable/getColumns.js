@@ -109,7 +109,7 @@ const getColumns = ({ setRowsData }) => {
       field: "namecar",
       label: "خودرو",
       cellRenderer: UsernameCell,
-      editorCellRenderer: (props) => <UsernameCell {...props} isEdit />,
+      // editorCellRenderer: (props) => <UsernameCell {...props} isEdit />,
     },
     {
       id: "3",
