@@ -29,6 +29,12 @@ const actionColumn = [
 const Datatable = () => {
   const columns = [
     {
+      id: 0,
+      field: "_id",
+      label: "ID",
+      // cellRenderer: Username,
+    },
+    {
       id: 1,
       field: "namecar",
       label: "خودرو",
@@ -74,36 +80,43 @@ const Datatable = () => {
     dispatch(listProductAction());
   }, [dispatch]);
 
-  const onRowsRequest = async (requestData, tableManager) => {
-    // simulate an actual api call
-    const response = await new Promise((r) =>
-      setTimeout(() => {
-        let allRows = product;
-        allRows = tableManager.searchApi.searchRows(allRows);
-        allRows = tableManager.sortApi.sortRows(allRows);
-
-        return r({
-          items: allRows.slice(requestData.from, requestData.to),
-          totalItems: allRows.length,
-        });
-      }, 1000)
-    );
-
-    return {
-      rows: response.items,
-      totalRows: response.totalItems,
-    };
-  };
   // ...................
 
   return (
     <div className="datatable">
       <div style={{ height: "100%", width: "100%" }}>
-        <GridTable
-          columns={columns}
-          onRowsRequest={onRowsRequest}
-          isLoading={loading}
-        />
+        <table class="table table-hover table-dark">
+          <thead>
+            <tr>
+              {columns.map((item, index) => (
+                <th scope="col">{item.label}</th>
+              ))}
+              {/* <th scope="col"><th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th> */}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">4</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );
