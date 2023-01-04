@@ -75,11 +75,12 @@ const Datatable = () => {
 
   const productList = useSelector((state) => state.productList);
   const { product, loading } = productList;
-
+  // const [inner, setInner] = useState("");
   useEffect(() => {
     dispatch(listProductAction());
   }, [dispatch]);
-
+  const theRef = useRef();
+  const inner = theRef.current.innerText;
   // ...................
 
   return (
@@ -91,18 +92,20 @@ const Datatable = () => {
               {columns.map((item, index) => (
                 <th scope="col">{item.label}</th>
               ))}
-              {/* <th scope="col"><th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th> */}
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">4</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <th scope="row">1</th>
+              {product &&
+                product.map((item, index) => {
+                  return (
+                    <>
+                      <th ref={theRef}>1</th>
+                      {/* <td>{inner === "1" ? item[1].namecar : null}</td> */}
+                    </>
+                  );
+                })}
             </tr>
             <tr>
               <th scope="row">2</th>
